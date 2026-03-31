@@ -37,4 +37,16 @@ class todolists {
         const added_todo = new todos(todo.id, todo.title, todo.description, todo.status)
         this.todos.push(added_todo)
     }
+
+    remove_todo(id:number):void {
+        this.todos = this.todos.filter(todo => todo.id !== id);
+    }
+
+    find_todo_by_id(id:number):todos|undefined{
+        return this.todos.find(todo => todo.id === id);
+    }
+
+    get_all_todos():todos[]{
+        return this.todos
+    }
 }
