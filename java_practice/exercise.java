@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class exercise {
 
@@ -28,10 +29,22 @@ public class exercise {
         return true;
     }
 
+    public ArrayList arrayinput(int n){
+        ArrayList arr= new ArrayList<Integer>(n);
+        Scanner sc=new Scanner(System.in);
+
+        for(int i=0;i<n;i++){
+            int m =sc.nextInt();
+            arr.add(m);
+        }
+         return arr;
+
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number: ");
         int n = sc.nextInt();
+      
 
         exercise obj = new exercise();
         System.out.println("Fibonacci of " + n + " is: " + obj.fibonacci(n));
@@ -39,7 +52,7 @@ public class exercise {
         System.out.println("Largest in [1,2,3,4,5] is: " + obj.largestElement(new int[]{1,2,3,4,5}));
         System.out.println("Is 5 prime? " + obj.isPrime(5));
         System.out.println("Is " + n + " prime? " + obj.isPrime(n));
-
+        System.out.println(obj.arrayinput(n));
         sc.close();
     }
 }
